@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Raspi-TempHum</string>
+
+
+    <string name="onboardpic01_heading1">On-boarding 1</string>
+    <string name="onboardpic01_heading2">On-boarding 2</string>
+    <string name="onboardpic01_heading3">On-boarding 3</string>
+
+    <string name="onboarding_dummyText">"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do in culpa qui officia deserunt mollit anim id est laborum."</string>
+
+
+    //sign-in
+
+    <string name="sign_in">Sign in</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forget_password">Forget Password</string>
+
+    //sign-up
+    <string name="next_btn">Next</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="fullname">Full Name</string>
+    <string name="email">Email Address</string>
+
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="choose_gender">Choose Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="others">Others</string>
+    <string name="phno">Phone Number</string>
+
+    <string name="login">Login</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_up">Sign up</string>
+
+    //code verification
+    <string name="code">Code</string>
+    <string name="verify">Verification</string>
+    <string name="verify_code_btm">Verify Code</string>
+    <string name="code_verify_des">Enter the one time password sent on: \n+91- 8248813545</string>
+
+    //Forget Password
+    <string name="forget">Forget</string>
+    <string name="forgetPassword_des">Provide your account\'s email for which you want to reset your password</string>
+
+    <string name="make">Make</string>
+    <string name="selection">Selection</string>
+    <string name="make_selection_des">Select which contact detail should we use to reset the password.</string>
+    <string name="via_sms">via sms:</string>
+    <string name="via_sms_number">+91 – 8248813545</string>
+    <string name="via_mail">via mail:</string>
+    <string name="via_mail_mailid">emersoncrash256@ gmail.com</string>
+
+    <string name="word_new">New</string>
+    <string name="credentials">Credentials</string>
+    <string name="new_credentials_des_1">Your identity has been verified !!</string>
+    <string name="new_credentials_des_2">Set your new password</string>
+    <string name="word_update">Update</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <string name="updated">Updated</string>
+    <string name="pass_updated_des">Your Password has been updated !</string>
+    <string name="done">Done</string>
+
+
+    <string name="successful">successful</string>
+    <string name="login_sucessful_des"></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

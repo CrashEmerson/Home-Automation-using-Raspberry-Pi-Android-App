@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/accountOptionCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:clickable="true"
+    android:elevation="8dp"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:longClickable="true"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/account_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="12dp"
+            android:paddingStart="25dp"
+            android:src="@drawable/ic_code" />
+
+
+        <TextView
+            android:id="@+id/account_list_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/account_icon"
+            android:fontFamily="@font/robotoregular"
+            android:gravity="start|center_vertical"
+            android:padding="5dp"
+            android:paddingStart="20dp"
+            android:text="Dark mode"
+            android:textColor="@color/lightBlack"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

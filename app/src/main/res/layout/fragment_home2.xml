@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLyt"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".HomeFragment">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff4e1">
+
+                    <TextView
+                        android:id="@+id/tempTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/robotobold"
+                        android:text="TEMPERATURE"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/tempTextView"
+                        android:layout_centerInParent="true"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/tempValueTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/robotolight"
+                            android:gravity="end|center_horizontal|center_vertical"
+                            android:text="00"
+                            android:textAlignment="textEnd"
+                            android:textSize="90sp" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/tempdegreeTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/nexalight"
+                                android:gravity="bottom|right"
+                                android:paddingBottom="25dp"
+                                android:text="o"
+                                android:textSize="25sp" />
+
+
+                            <TextView
+                                android:id="@+id/temp_C_TextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_gravity="bottom"
+                                android:layout_toEndOf="@id/tempdegreeTextView"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/nexalight"
+                                android:gravity="start|center_vertical|center_horizontal"
+                                android:text="c"
+                                android:textSize="50sp" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#FFCB2B"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="4dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:src="@mipmap/ic_bulb_foreground" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#FFCB2B"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="4dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:src="@mipmap/ic_bulb_foreground" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#FFCB2B"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="4dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:src="@mipmap/ic_bulb_foreground" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#FFCB2B"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="4dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:backgroundTint="@color/lightWhite"
+                        android:src="@mipmap/ic_bulb_foreground" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="160dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#b6d9f4">
+
+                    <TextView
+                        android:id="@+id/balconyLEDTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/robotobold"
+                        android:text="BALCONY LED"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/balconyLEDONTxtView"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/balconyLEDTxtView"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/robotothin"
+                        android:gravity="center"
+                        android:text="OFF"
+                        android:textSize="40sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/balconyLEDSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/balconyLEDTxtView"
+                        android:layout_toEndOf="@id/balconyLEDONTxtView"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:thumb="@drawable/ic_switch_circle"
+                        app:track="@drawable/track_selector" />
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="160dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#d5cce4">
+
+                    <TextView
+                        android:id="@+id/hallLEDTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/robotobold"
+                        android:text="HALL LED"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/hallLEDONTxtView"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/hallLEDTxtView"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/robotothin"
+                        android:gravity="center"
+                        android:text="OFF"
+                        android:textSize="40sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/hallLEDSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/hallLEDTxtView"
+                        android:layout_toEndOf="@id/hallLEDONTxtView"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:thumb="@drawable/ic_switch_circle"
+                        app:track="@drawable/track_selector" />
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/familyNameTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/robotolight"
+                android:gravity="center"
+                android:text="CRASH"
+                android:textColor="@color/lightBlack"
+                android:textSize="50sp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/timeTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/robotolight"
+                android:gravity="center"
+                android:text="02:20"
+                android:textColor="@color/lightBlack"
+                android:textSize="50sp" />
+
+            <TextView
+                android:id="@+id/dateTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/robotomedium"
+                android:gravity="center"
+                android:text="TUE, 18 JUNE"
+                android:textAllCaps="true"
+                android:textColor="@color/lightBlack"
+                android:textSize="16sp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ebedc8">
+
+                    <TextView
+                        android:id="@+id/humTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/robotobold"
+                        android:text="HUMIDITY"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/humTextView"
+                        android:layout_centerInParent="true"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/humValueTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/robotolight"
+                            android:gravity="end|center_horizontal|center_vertical"
+                            android:text="00"
+                            android:textAlignment="textEnd"
+                            android:textSize="90sp" />
+
+                        <TextView
+                            android:id="@+id/hum_C_TextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nexalight"
+                            android:gravity="center|center_vertical|center_horizontal"
+                            android:text="%"
+                            android:textSize="40sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#feff89">
+
+                    <TextView
+                        android:id="@+id/bedTimeTxtView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/robotoregular"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="BED TIME"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/bedTimeValueTxtView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_toEndOf="@+id/bedTimeTxtView"
+                        android:fontFamily="@font/robotomedium"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="10 : 00"
+                        android:textSize="22sp" />
+
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="160dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f8c5a2">
+
+                    <TextView
+                        android:id="@+id/kidsRoomLEDTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/robotobold"
+                        android:text="KIDS ROOM LED"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/kidsRoomLEDONTxtView"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/kidsRoomLEDTxtView"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/robotothin"
+                        android:gravity="center"
+                        android:text="OFF"
+                        android:textSize="40sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/kidsRoomLEDSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/kidsRoomLEDTxtView"
+                        android:layout_toEndOf="@id/kidsRoomLEDONTxtView"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:thumb="@drawable/ic_switch_circle"
+                        app:track="@drawable/track_selector" />
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="160dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#7cdcd0">
+
+                    <TextView
+                        android:id="@+id/bedRoomLEDTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/robotobold"
+                        android:text="BED ROOM LED"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/bedRoomLEDONTxtView"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/bedRoomLEDTxtView"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/robotothin"
+                        android:gravity="center"
+                        android:text="OFF"
+                        android:textSize="40sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/bedRoomLEDSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/bedRoomLEDTxtView"
+                        android:layout_toEndOf="@id/bedRoomLEDONTxtView"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:thumb="@drawable/ic_switch_circle"
+                        app:track="@drawable/track_selector" />
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

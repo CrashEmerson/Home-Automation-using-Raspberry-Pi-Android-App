@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "830883266853",
+    "firebase_url": "https://sample-raspi-3fc0b.firebaseio.com",
+    "project_id": "sample-raspi-3fc0b",
+    "storage_bucket": "sample-raspi-3fc0b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830883266853:android:623d63ca4e8cdec63c1acc",
+        "android_client_info": {
+          "package_name": "com.example.raspi_temphum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830883266853-ke0cjhvd3t9s6ikne9q82qd1edb9hc2g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.raspi_temphum",
+            "certificate_hash": "ec424914d3ad803484b5f4fa4069fe9efa37de24"
+          }
+        },
+        {
+          "client_id": "830883266853-jinre008r432ehhudu3hd3ojhdv925ve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf1KphD6BHLSG69uC27l4UDTUGbm9DVFk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830883266853-jinre008r432ehhudu3hd3ojhdv925ve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

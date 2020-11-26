@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myrelativelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#085f63"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/temphumTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#084B4E"
+        android:fontFamily="@font/nexabold"
+        android:padding="20sp"
+        android:text="Temperature and Humidity"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="14pt" />
+
+    <Button
+        android:id="@+id/activateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="120px"
+        android:paddingRight="120px"
+        android:paddingTop="40px"
+        android:paddingBottom="40px"
+        android:layout_gravity="center"
+        android:layout_marginTop="30sp"
+        android:layout_below="@+id/temphumTxtView"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/activatebtnshadows"
+        android:text="ACTIVATE"
+        android:textColor="#085f63"
+        android:textSize="30sp" />
+
+
+    <LinearLayout
+        android:id="@+id/innerLinearLyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/activateBtn"
+        android:layout_marginTop="30sp"
+        android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/tempCircle"
+        android:layout_width="170sp"
+        android:layout_height="170sp"
+        android:padding="40sp"
+        android:layout_marginLeft="40sp"
+        android:background="@drawable/shadows"
+        android:fontFamily="@font/nexabold"
+        android:gravity="center"
+        android:text="75 '"
+        android:textColor="#facf5a"
+        android:textAlignment="center"
+        android:textSize="18pt" />
+
+    <TextView
+        android:id="@+id/humCircle"
+        android:layout_width="170sp"
+        android:layout_height="170sp"
+        android:padding="40sp"
+        android:layout_marginRight="40sp"
+        android:background="@drawable/shadows"
+        android:fontFamily="@font/nexabold"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:text="78%"
+        android:textAlignment="center"
+        android:textColor="#facf5a"
+        android:textSize="18pt" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/innerLinearLyt">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <Switch
+                android:id="@+id/hallSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:checked="true"
+                android:layout_weight="1"
+                android:fontFamily="@font/nexabold"
+                android:gravity="center"
+                android:text="Relay : "
+                android:textColor="#facf5a"
+                android:textOff="Off"
+                android:textOn="On"
+                android:textSize="15pt"
+                tools:ignore="UseSwitchCompatOrMaterialXml"
+                android:layout_below="@id/innerLinearLyt"
+                android:layout_centerHorizontal="true"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

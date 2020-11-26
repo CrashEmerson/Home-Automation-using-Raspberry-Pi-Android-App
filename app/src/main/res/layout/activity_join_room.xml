@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    tools:context=".JoinRoomActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hiUserTxtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:textColor="@color/lightBlack"
+            android:text="JOIN ROOM"
+            android:textAllCaps="true"
+            android:textSize="60sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/joinroomCodeEdTxt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ROOM CODE"
+            android:layout_marginTop="60dp"
+            android:textColorHint="@color/lightBlack"
+            app:boxStrokeColor="@color/lightBlack"
+            app:boxStrokeWidthFocused="2dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/lightBlack"
+            app:startIconDrawable="@drawable/ic_login_username"
+            app:startIconTint="@color/lightBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/nexabold"
+                android:inputType="text"
+                android:maxLength="7"
+                android:textColor="@color/lightBlack" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/joinBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JOIN"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/nexabold"
+            android:background="@color/lightBlack"
+            android:textColor="@color/lightWhite"
+            android:textSize="25sp"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

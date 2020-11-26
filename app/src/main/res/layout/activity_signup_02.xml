@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SignUp2_scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    tools:context=".CommonFiles.signup_02">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_backbtn"
+            app:tint="@color/lightBlack" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/nexabold"
+            android:text="@string/sign_up"
+            android:textAllCaps="true"
+            android:textColor="@color/lightBlack"
+            android:textSize="60dp" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nexabold"
+                android:gravity="right"
+                android:text="2/2"
+                android:textColor="@color/lightBlack"
+                android:textSize="30sp" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nexabold"
+                android:text="@string/choose_gender"
+                android:textColor="@color/lightBlack"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/genderRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/lightBlack"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <RadioButton
+                    android:id="@+id/radioBtn_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/lightBlack"
+                    android:buttonTint="@color/lightBlack"
+                    android:fontFamily="@font/nexalight"
+                    android:text="@string/male"
+                    android:textColor="@color/lightBlack" />
+
+                <RadioButton
+                    android:id="@+id/radioBtn_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="@color/lightBlack"
+                    android:buttonTint="@color/lightBlack"
+                    android:fontFamily="@font/nexalight"
+                    android:text="@string/female"
+                    android:textColor="@color/lightBlack" />
+
+                <RadioButton
+                    android:id="@+id/radioBtn_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="@color/lightBlack"
+                    android:buttonTint="@color/lightBlack"
+                    android:fontFamily="@font/nexalight"
+                    android:text="@string/others"
+                    android:textColor="@color/lightBlack" />
+
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/countryCodePicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/country_code_blackborder"
+                    app:ccp_showFullName="true" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phoneNoEdTxt"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:backgroundTint="@color/lightBlack"
+                    android:hint="@string/phno"
+                    android:textColorHint="@color/lightBlack"
+                    app:boxStrokeColor="@color/lightBlack"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/lightBlack"
+                    app:startIconDrawable="@drawable/ic_phone_number"
+                    app:startIconTint="@color/lightBlack">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/nexabold"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:textColor="@color/lightBlack" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/nextBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/lightBlack"
+                android:padding="15sp"
+                android:text="@string/next_btn"
+                android:textColor="@color/lightWhite"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/createAccountBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="#00000000"
+                android:text="@string/sign_in"
+                android:textColor="@color/lightBlack"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

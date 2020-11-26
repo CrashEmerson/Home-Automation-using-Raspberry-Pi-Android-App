@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:padding="30dp"
+    tools:context=".RoomCreatedSuccessActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nexabold"
+            android:gravity="center"
+            android:text="ROOM"
+            android:textAllCaps="true"
+            android:textColor="@color/lightBlack"
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nexalight"
+            android:gravity="center"
+            android:text="CREATED"
+            android:textAllCaps="true"
+            android:textColor="@color/lightBlack"
+            android:textSize="50sp" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_tick"
+            app:tint="@color/lightBlack" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/nexalight"
+            android:gravity="center"
+            android:text="Your room has been created successfully"
+            android:textColor="@color/lightBlack"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/enterRoomBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/lightBlack"
+            android:padding="15sp"
+            android:text="ENTER ROOM NOW"
+            android:textColor="@color/lightWhite"
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/notNowBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/lightWhite"
+            android:padding="15sp"
+            android:text="not now"
+            android:textColor="@color/lightBlack"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

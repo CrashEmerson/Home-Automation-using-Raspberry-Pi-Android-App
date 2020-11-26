@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/changeUsernameScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center|center_horizontal|center_vertical"
+    android:padding="30dp"
+    tools:context=".CommonFiles.ChangeUsername">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/nexabold"
+            android:text="Change"
+            android:textAllCaps="true"
+            android:textColor="@color/lightBlack"
+            android:textSize="60sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nexalight"
+            android:text="username"
+            android:textAllCaps="true"
+            android:textColor="@color/lightBlack"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/nexabold"
+            android:text="@string/new_credentials_des_1"
+            android:textAlignment="center"
+            android:textColor="@color/lightBlack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nexabold"
+            android:text="@string/new_credentials_des_2"
+            android:textAlignment="center"
+            android:textColor="@color/lightBlack"
+            android:textSize="16sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/current_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/nexalight"
+                android:padding="10dp"
+                android:text="current username"
+                android:textColor="@color/lightBlack"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/newUsernameEdTxt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="New Username"
+                android:textColorHint="@color/lightBlack"
+                app:boxStrokeColor="@color/lightBlack"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/lightBlack"
+                app:startIconDrawable="@drawable/ic_username"
+                app:startIconTint="@color/lightBlack">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nexabold"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/lightBlack" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/updateBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/lightBlack"
+                android:padding="15sp"
+                android:text="@string/word_update"
+                android:textColor="@color/lightWhite"
+                android:textSize="20sp" />
+
+
+            <Button
+                android:id="@+id/goToDashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:text="BACK TO DASHBOARD"
+                android:textColor="@color/lightBlack"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
