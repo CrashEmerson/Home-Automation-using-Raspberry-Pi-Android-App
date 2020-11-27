@@ -19,7 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
-            android:textColor="@color/lightBlack"
+            android:fontFamily="@font/nexalight"
+            android:textColor="@color/color_bg_orange"
             android:text="Hi, \nEmerson"
             android:textAllCaps="true"
             android:textSize="60sp" />
@@ -31,8 +32,8 @@
                 android:layout_height="wrap_content"
                 android:text="CREATE ROOM"
                 android:fontFamily="@font/nexabold"
-                android:background="@color/lightBlack"
-                android:textColor="@color/lightWhite"
+                android:background="@color/color_bg_orange"
+                android:textColor="@color/color_text_white"
                 android:textSize="25sp"
                 />
             <Button
@@ -42,8 +43,8 @@
                 android:text="JOIN ROOM"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/nexabold"
-                android:background="@color/lightBlack"
-                android:textColor="@color/lightWhite"
+                android:background="@color/color_bg_orange"
+                android:textColor="@color/color_text_white"
                 android:textSize="25sp"
                 />
 

@@ -23,7 +23,7 @@ public class ForgetPassword extends AppCompatActivity {
 
     Button nextBtn;
     CountryCodePicker countryCodePicker;
-    Intent frgtPwd_makeSectionActivity, VerifyOTP;
+    Intent frgtPwd_newCredentialActivity, VerifyOTP;
     TextInputLayout phoneNoEdTxt;
 
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -38,7 +38,7 @@ public class ForgetPassword extends AppCompatActivity {
         nextBtn = findViewById(R.id.nextBtn);
         phoneNoEdTxt = findViewById(R.id.phoneNoEdTxt);
         countryCodePicker = findViewById(R.id.countryCodePicker);
-        frgtPwd_makeSectionActivity = new Intent(this, ForgetPassword_MakeSelection.class);
+        frgtPwd_newCredentialActivity = new Intent(this, ForgetPassword_NewCredentials.class);
         VerifyOTP = new Intent(this, CodeVertifyOTP.class);
 
         nextBtn.setOnClickListener(new View.OnClickListener() {

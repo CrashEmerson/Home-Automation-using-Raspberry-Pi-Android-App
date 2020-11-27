@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     tools:context=".Dashboard">
 
     <LinearLayout
@@ -16,9 +15,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/lightWhite"
+            android:background="#e4fcf9"
             android:padding="20dp"
-            android:elevation="8dp">
+            android:elevation="4dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -26,7 +25,7 @@
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/nexalight"
                 android:gravity="center"
-                android:text="senstron."
+                android:text="BIRD BOX."
                 android:textAllCaps="true"
                 android:textColor="@color/lightBlack"
                 android:textSize="30sp" />

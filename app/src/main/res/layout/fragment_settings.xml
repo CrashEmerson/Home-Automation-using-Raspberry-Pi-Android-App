@@ -5,10 +5,85 @@
     android:layout_height="match_parent"
     tools:context=".SettingsFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/settingRecyclerView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:orientation="vertical"
+        android:id="@+id/linearLyt">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/setting_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="12dp"
+                android:paddingStart="25dp"
+                android:src="@drawable/ic_code" />
+
+            <LinearLayout
+                android:id="@+id/linearlyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/setting_icon"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/setting_list_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotoregular"
+                    android:gravity="start|center_vertical"
+                    android:padding="5dp"
+                    android:paddingStart="20dp"
+                    android:text="Dark mode"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/setting_list_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotolight"
+                    android:gravity="start|center_vertical"
+                    android:paddingStart="20dp"
+                    android:text="To prevent your eyes"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/setting_list_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/robotomedium"
+                android:padding="12dp"
+                android:paddingEnd="20dp"
+                android:text="ON"
+                android:textAllCaps="true"
+                android:textColor="@color/lightBlack"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/settingRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </LinearLayout>
+
+
 
 </FrameLayout>

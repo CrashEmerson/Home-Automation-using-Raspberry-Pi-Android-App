@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="30dp"
+    android:background="@color/color_text_white"
     tools:context=".JoinRoomActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/hiUserTxtView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="start"
-            android:textColor="@color/lightBlack"
+            android:gravity="center"
+            android:fontFamily="@font/nexalight"
+            android:textColor="@color/color_bg_orange"
             android:text="JOIN ROOM"
             android:textAllCaps="true"
-            android:textSize="60sp" />
+            android:textSize="55sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/joinroomCodeEdTxt"
@@ -31,13 +33,13 @@
             android:layout_height="wrap_content"
             android:hint="ROOM CODE"
             android:layout_marginTop="60dp"
-            android:textColorHint="@color/lightBlack"
-            app:boxStrokeColor="@color/lightBlack"
+            android:textColorHint="@color/color_bg_orange"
+            app:boxStrokeColor="@color/color_bg_orange"
             app:boxStrokeWidthFocused="2dp"
             app:endIconMode="clear_text"
-            app:endIconTint="@color/lightBlack"
+            app:endIconTint="@color/color_bg_orange"
             app:startIconDrawable="@drawable/ic_login_username"
-            app:startIconTint="@color/lightBlack">
+            app:startIconTint="@color/color_bg_orange">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -56,12 +58,12 @@
             android:text="JOIN"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/nexabold"
-            android:background="@color/lightBlack"
-            android:textColor="@color/lightWhite"
+            android:background="@color/color_bg_orange"
+            android:textColor="@color/color_text_white"
             android:textSize="25sp"
             />
 
     </LinearLayout>
 
 
-</RelativeLayout>
+</ScrollView>

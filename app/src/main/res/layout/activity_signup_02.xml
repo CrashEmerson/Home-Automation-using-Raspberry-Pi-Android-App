@@ -6,28 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="30dp"
+    android:background="@color/color_bg_orange"
     tools:context=".CommonFiles.signup_02">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_backbtn"
-            app:tint="@color/lightBlack" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:fontFamily="@font/nexabold"
+            android:fontFamily="@font/nexalight"
             android:text="@string/sign_up"
             android:textAllCaps="true"
-            android:textColor="@color/lightBlack"
+            android:textColor="@color/color_text_white"
             android:textSize="60dp" />
 
 
@@ -41,7 +37,7 @@
                 android:fontFamily="@font/nexabold"
                 android:gravity="right"
                 android:text="2/2"
-                android:textColor="@color/lightBlack"
+                android:textColor="@color/color_text_white"
                 android:textSize="30sp" />
         </RelativeLayout>
 
@@ -58,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nexabold"
                 android:text="@string/choose_gender"
-                android:textColor="@color/lightBlack"
+                android:textColor="@color/color_text_white"
                 android:textSize="18sp" />
 
             <RadioGroup
@@ -75,33 +71,33 @@
                     android:id="@+id/radioBtn_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/lightBlack"
-                    android:buttonTint="@color/lightBlack"
+                    android:backgroundTint="@color/color_text_white"
+                    android:buttonTint="@color/color_text_white"
                     android:fontFamily="@font/nexalight"
                     android:text="@string/male"
-                    android:textColor="@color/lightBlack" />
+                    android:textColor="@color/color_text_white" />
 
                 <RadioButton
                     android:id="@+id/radioBtn_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:backgroundTint="@color/lightBlack"
-                    android:buttonTint="@color/lightBlack"
+                    android:backgroundTint="@color/color_text_white"
+                    android:buttonTint="@color/color_text_white"
                     android:fontFamily="@font/nexalight"
                     android:text="@string/female"
-                    android:textColor="@color/lightBlack" />
+                    android:textColor="@color/color_text_white" />
 
                 <RadioButton
                     android:id="@+id/radioBtn_others"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:backgroundTint="@color/lightBlack"
-                    android:buttonTint="@color/lightBlack"
+                    android:backgroundTint="@color/color_text_white"
+                    android:buttonTint="@color/color_text_white"
                     android:fontFamily="@font/nexalight"
                     android:text="@string/others"
-                    android:textColor="@color/lightBlack" />
+                    android:textColor="@color/color_text_white" />
 
             </RadioGroup>
 
@@ -116,6 +112,7 @@
                     android:id="@+id/countryCodePicker"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:ccp_contentColor="@color/color_text_white"
                     android:background="@drawable/country_code_blackborder"
                     app:ccp_showFullName="true" />
 
@@ -125,15 +122,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:backgroundTint="@color/lightBlack"
+                    android:backgroundTint="@color/color_text_white"
                     android:hint="@string/phno"
-                    android:textColorHint="@color/lightBlack"
-                    app:boxStrokeColor="@color/lightBlack"
+                    android:textColorHint="@color/color_text_white"
+                    app:boxStrokeColor="@color/color_text_white"
                     app:boxStrokeWidthFocused="2dp"
                     app:endIconMode="clear_text"
-                    app:endIconTint="@color/lightBlack"
+                    app:endIconTint="@color/color_text_white"
                     app:startIconDrawable="@drawable/ic_phone_number"
-                    app:startIconTint="@color/lightBlack">
+                    app:startIconTint="@color/color_text_white">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -152,10 +149,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="@color/lightBlack"
+                android:backgroundTint="@color/color_text_white"
                 android:padding="15sp"
                 android:text="@string/next_btn"
-                android:textColor="@color/lightWhite"
+                android:textColor="@color/color_bg_orange"
                 android:textSize="20sp" />
 
             <Button
@@ -166,7 +163,7 @@
                 android:layout_marginTop="10dp"
                 android:background="#00000000"
                 android:text="@string/sign_in"
-                android:textColor="@color/lightBlack"
+                android:textColor="@color/color_text_white"
                 android:textSize="20sp" />
 
         </LinearLayout>

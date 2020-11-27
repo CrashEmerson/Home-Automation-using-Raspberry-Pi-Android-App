@@ -18,8 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CommonFiles.ChangeUsername"/>
+        <activity android:name=".CommonFiles.ChangeUsername" />
         <activity android:name=".Dashboard">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".JoinRoomActivity" />
         <activity android:name=".RoomCreatedSuccessActivity" />
@@ -28,23 +32,17 @@
         <activity android:name=".CommonFiles.LoginSuccessfull" />
         <activity android:name=".CommonFiles.ForgetPassword_PasswordUpdated" />
         <activity android:name=".CommonFiles.ForgetPassword_NewCredentials" />
-        <activity android:name=".CommonFiles.ForgetPassword_MakeSelection" />
         <activity android:name=".CommonFiles.ForgetPassword" />
         <activity android:name=".CommonFiles.CodeVertifyOTP" />
         <activity android:name=".CommonFiles.signup_02" />
         <activity android:name=".CommonFiles.signup_01" />
-        <activity android:name=".CommonFiles.SignIn">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".CommonFiles.SignIn" />
         <activity android:name=".OnboardingScreen" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
 
-        <receiver android:name=".CommonFiles.HelperClasses.BedTimeAlertReceiver"/>
+        <receiver android:name=".CommonFiles.HelperClasses.BedTimeAlertReceiver" />
 
     </application>
 

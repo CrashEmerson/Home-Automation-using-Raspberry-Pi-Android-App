@@ -78,6 +78,14 @@ public class HomeFragment extends Fragment {
         frameLyt = (FrameLayout) view.findViewById(R.id.frameLyt);
         SignInActivity = new Intent(myContext, SignIn.class);
 
+
+        SessionManager sessionManager = new SessionManager(myContext, SessionManager.SESSION_USERSESSION);
+        String userFullname = sessionManager.getUserDataFromSession().get("fullName");
+
+        if (!sessionManager.checkUserIsLoggedIn()) {
+            startActivity(SignInActivity);
+        }
+
         //Methods
         setFamilyNameInDashboard();
         fetchTempHumData();
@@ -139,7 +147,7 @@ public class HomeFragment extends Fragment {
 
                 final String currentDay = days[day - 1];
                 final int currentDate = date;
-                final String currentMonth = months[month];
+                final String currentMonth = months[month - 1];
 
                 final String currentHour = String.format("%02d:%02d", hours, minute);
 
@@ -292,13 +300,9 @@ public class HomeFragment extends Fragment {
 
         SessionManager roomData = new SessionManager(myContext, SessionManager.SESSION_ROOMSESSION);
 
-        if(roomData !=null){
-            HashMap<String, String> roomhashData = roomData.getRoomDataFromSession();
-            String currentfamilyName = roomhashData.get("FamilName").toString();
-            familyNameTxtView.setText(currentfamilyName);
-        }else{
-            startActivity(SignInActivity);
-        }
+        HashMap<String, String> roomhashData = roomData.getRoomDataFromSession();
+        String currentfamilyName = roomhashData.get("FamilName").toString();
+        familyNameTxtView.setText(currentfamilyName);
 
 
     }

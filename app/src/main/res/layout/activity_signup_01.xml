@@ -5,30 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="30dp"
+    android:background="@color/color_bg_orange"
     tools:context=".CommonFiles.signup_01">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/signup_backBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_backbtn"
-            android:transitionName="transition_backBtn"
-            app:tint="@color/lightBlack" />
 
         <TextView
             android:id="@+id/signup_titleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:fontFamily="@font/nexabold"
+            android:fontFamily="@font/nexalight"
             android:text="@string/sign_up"
             android:textAllCaps="true"
-            android:textColor="@color/lightBlack"
+            android:textColor="@color/color_text_white"
             android:textSize="60dp"
             android:transitionName="transition_titleText" />
 
@@ -42,7 +36,7 @@
                 android:fontFamily="@font/nexabold"
                 android:gravity="right"
                 android:text="1/2"
-                android:textColor="@color/lightBlack"
+                android:textColor="@color/color_text_white"
                 android:textSize="30sp" />
         </RelativeLayout>
 
@@ -56,15 +50,15 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/lightBlack"
+                android:backgroundTint="@color/color_text_white"
                 android:hint="@string/fullname"
-                android:textColorHint="@color/lightBlack"
-                app:boxStrokeColor="@color/lightBlack"
+                android:textColorHint="@color/color_text_white"
+                app:boxStrokeColor="@color/color_text_white"
                 app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="clear_text"
-                app:endIconTint="@color/lightBlack"
+                app:endIconTint="@color/color_text_white"
                 app:startIconDrawable="@drawable/ic_login_fullname"
-                app:startIconTint="@color/lightBlack">
+                app:startIconTint="@color/color_text_white">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -80,15 +74,15 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/lightBlack"
+                android:backgroundTint="@color/color_text_white"
                 android:hint="@string/username"
-                android:textColorHint="@color/lightBlack"
-                app:boxStrokeColor="@color/lightBlack"
+                android:textColorHint="@color/color_text_white"
+                app:boxStrokeColor="@color/color_text_white"
                 app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="clear_text"
-                app:endIconTint="@color/lightBlack"
+                app:endIconTint="@color/color_text_white"
                 app:startIconDrawable="@drawable/ic_login_username"
-                app:startIconTint="@color/lightBlack">
+                app:startIconTint="@color/color_text_white">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -104,15 +98,15 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/lightBlack"
+                android:backgroundTint="@color/color_text_white"
                 android:hint="@string/email"
-                android:textColorHint="@color/lightBlack"
-                app:boxStrokeColor="@color/lightBlack"
+                android:textColorHint="@color/color_text_white"
+                app:boxStrokeColor="@color/color_text_white"
                 app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/lightBlack"
                 app:startIconDrawable="@drawable/ic_email"
-                app:startIconTint="@color/lightBlack">
+                app:startIconTint="@color/color_text_white">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -130,13 +124,13 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/lightBlack"
                 android:hint="@string/password"
-                android:textColorHint="@color/lightBlack"
-                app:boxStrokeColor="@color/lightBlack"
+                android:textColorHint="@color/color_text_white"
+                app:boxStrokeColor="@color/color_text_white"
                 app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/lightBlack"
+                app:endIconTint="@color/color_text_white"
                 app:startIconDrawable="@drawable/ic_login_password"
-                app:startIconTint="@color/lightBlack">
+                app:startIconTint="@color/color_text_white">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -154,10 +148,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:backgroundTint="@color/lightBlack"
+            android:backgroundTint="@color/color_text_white"
             android:padding="15sp"
             android:text="@string/next_btn"
-            android:textColor="@color/lightWhite"
+            android:textColor="@color/color_bg_orange"
             android:textSize="20sp"
             android:transitionName="transition_nextBtn" />
 
@@ -169,7 +163,7 @@
             android:layout_marginTop="10dp"
             android:background="#00000000"
             android:text="@string/sign_in"
-            android:textColor="@color/lightBlack"
+            android:textColor="@color/color_text_white"
             android:textSize="20sp"
             android:transitionName="transition_signInBtn" />
     </LinearLayout>

@@ -5,12 +5,14 @@
     android:id="@+id/frameLyt"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#ace6f6"
     tools:context=".HomeFragment">
 
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_gravity="center"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -31,7 +33,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#fff4e1">
+                    android:background="@color/color_text_white">
 
                     <TextView
                         android:id="@+id/tempTextView"
@@ -42,6 +44,7 @@
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/robotobold"
                         android:text="TEMPERATURE"
+                        android:textColor="@color/lightBlack"
                         android:textSize="15sp" />
 
                     <LinearLayout
@@ -61,6 +64,7 @@
                             android:gravity="end|center_horizontal|center_vertical"
                             android:text="00"
                             android:textAlignment="textEnd"
+                            android:textColor="@android:color/holo_blue_light"
                             android:textSize="90sp" />
 
                         <RelativeLayout
@@ -77,6 +81,7 @@
                                 android:gravity="bottom|right"
                                 android:paddingBottom="25dp"
                                 android:text="o"
+                                android:textColor="@android:color/holo_blue_light"
                                 android:textSize="25sp" />
 
 
@@ -91,6 +96,7 @@
                                 android:fontFamily="@font/nexalight"
                                 android:gravity="start|center_vertical|center_horizontal"
                                 android:text="c"
+                                android:textColor="@android:color/holo_blue_light"
                                 android:textSize="50sp" />
 
                         </RelativeLayout>
@@ -114,7 +120,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="#FFCB2B"
+                    app:cardBackgroundColor="@color/color_text_white"
                     app:cardCornerRadius="50dp"
                     app:cardElevation="4dp">
 
@@ -131,7 +137,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="#FFCB2B"
+                    app:cardBackgroundColor="@color/color_text_white"
                     app:cardCornerRadius="50dp"
                     app:cardElevation="4dp">
 
@@ -148,7 +154,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="#FFCB2B"
+                    app:cardBackgroundColor="@color/color_text_white"
                     app:cardCornerRadius="50dp"
                     app:cardElevation="4dp">
 
@@ -165,7 +171,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="#FFCB2B"
+                    app:cardBackgroundColor="@color/color_text_white"
                     app:cardCornerRadius="50dp"
                     app:cardElevation="4dp">
 
@@ -191,7 +197,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#b6d9f4">
+                    android:background="@color/color_text_white">
 
                     <TextView
                         android:id="@+id/balconyLEDTxtView"
@@ -202,6 +208,7 @@
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/robotobold"
                         android:text="BALCONY LED"
+                        android:textColor="@color/lightBlack"
                         android:textSize="15sp" />
 
                     <TextView
@@ -213,6 +220,7 @@
                         android:fontFamily="@font/robotothin"
                         android:gravity="center"
                         android:text="OFF"
+                        android:textColor="@android:color/holo_blue_light"
                         android:textSize="40sp" />
 
                     <androidx.appcompat.widget.SwitchCompat
@@ -241,7 +249,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#d5cce4">
+                    android:background="@color/color_text_white">
 
                     <TextView
                         android:id="@+id/hallLEDTxtView"
@@ -252,6 +260,7 @@
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/robotobold"
                         android:text="HALL LED"
+                        android:textColor="@color/lightBlack"
                         android:textSize="15sp" />
 
                     <TextView
@@ -263,6 +272,7 @@
                         android:fontFamily="@font/robotothin"
                         android:gravity="center"
                         android:text="OFF"
+                        android:textColor="@android:color/holo_blue_light"
                         android:textSize="40sp" />
 
                     <androidx.appcompat.widget.SwitchCompat
@@ -285,7 +295,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/robotolight"
+                android:fontFamily="@font/nexabold"
                 android:gravity="center"
                 android:text="CRASH"
                 android:textColor="@color/lightBlack"
@@ -334,17 +344,18 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#ebedc8">
+                    android:background="@color/color_text_white">
 
                     <TextView
                         android:id="@+id/humTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/robotobold"
                         android:text="HUMIDITY"
+                        android:textColor="@color/lightBlack"
                         android:textSize="15sp" />
 
                     <LinearLayout
@@ -364,6 +375,7 @@
                             android:gravity="end|center_horizontal|center_vertical"
                             android:text="00"
                             android:textAlignment="textEnd"
+                            android:textColor="@android:color/holo_blue_light"
                             android:textSize="90sp" />
 
                         <TextView
@@ -375,6 +387,7 @@
                             android:fontFamily="@font/nexalight"
                             android:gravity="center|center_vertical|center_horizontal"
                             android:text="%"
+                            android:textColor="@android:color/holo_blue_light"
                             android:textSize="40sp" />
                     </LinearLayout>
                 </RelativeLayout>
@@ -392,7 +405,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#feff89">
+                    android:background="@color/color_text_white">
 
                     <TextView
                         android:id="@+id/bedTimeTxtView"
@@ -401,11 +414,12 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/robotoregular"
                         android:gravity="center"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:paddingTop="5dp"
-                        android:paddingRight="5dp"
+                        android:paddingEnd="5dp"
                         android:paddingBottom="5dp"
                         android:text="BED TIME"
+                        android:textColor="@color/lightBlack"
                         android:textSize="15sp" />
 
                     <TextView
@@ -418,6 +432,7 @@
                         android:gravity="center"
                         android:padding="5dp"
                         android:text="10 : 00"
+                        android:textColor="@android:color/holo_blue_light"
                         android:textSize="22sp" />
 
 
@@ -435,7 +450,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#f8c5a2">
+                    android:background="@color/color_text_white">
 
                     <TextView
                         android:id="@+id/kidsRoomLEDTxtView"
@@ -446,6 +461,7 @@
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/robotobold"
                         android:text="KIDS ROOM LED"
+                        android:textColor="@color/lightBlack"
                         android:textSize="15sp" />
 
                     <TextView
@@ -457,6 +473,7 @@
                         android:fontFamily="@font/robotothin"
                         android:gravity="center"
                         android:text="OFF"
+                        android:textColor="@android:color/holo_blue_light"
                         android:textSize="40sp" />
 
                     <androidx.appcompat.widget.SwitchCompat
@@ -485,7 +502,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#7cdcd0">
+                    android:background="@color/color_text_white">
 
                     <TextView
                         android:id="@+id/bedRoomLEDTxtView"
@@ -496,6 +513,7 @@
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/robotobold"
                         android:text="BED ROOM LED"
+                        android:textColor="@color/lightBlack"
                         android:textSize="15sp" />
 
                     <TextView
@@ -507,6 +525,7 @@
                         android:fontFamily="@font/robotothin"
                         android:gravity="center"
                         android:text="OFF"
+                        android:textColor="@android:color/holo_blue_light"
                         android:textSize="40sp" />
 
                     <androidx.appcompat.widget.SwitchCompat
