@@ -34,7 +34,6 @@ public class signup_02 extends AppCompatActivity {
     TextInputLayout phoneNoEdTxt;
     ScrollView SignUp2_scrollView;
     CountryCodePicker countryCodePicker;
-    Intent VerifyOTP_Activity;
     String key_fullname, key_username, key_emailAddress, key_password, key_gender, key_selectedCountryCode, key_phoneNo;
 
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -52,7 +51,6 @@ public class signup_02 extends AppCompatActivity {
         codeVerifyActivity = new Intent(this, CodeVertifyOTP.class);
         SignUp2_scrollView = findViewById(R.id.SignUp2_scrollView);
         countryCodePicker = findViewById(R.id.countryCodePicker);
-        VerifyOTP_Activity = new Intent(this, CodeVertifyOTP.class);
 
         genderRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -111,17 +109,17 @@ public class signup_02 extends AppCompatActivity {
 
         putDataToNxtActivity();
         Toast.makeText(this, key_gender, Toast.LENGTH_SHORT).show();
-        startActivity(VerifyOTP_Activity);
+        startActivity(codeVerifyActivity);
     }
 
     private void putDataToNxtActivity() {
-        VerifyOTP_Activity.putExtra("key_fullname", key_fullname);
-        VerifyOTP_Activity.putExtra("key_username", key_username);
-        VerifyOTP_Activity.putExtra("key_emailAddress", key_emailAddress);
-        VerifyOTP_Activity.putExtra("key_password", key_password);
-        VerifyOTP_Activity.putExtra("key_gender", key_gender);
-        VerifyOTP_Activity.putExtra("key_selectedCountryCode", key_selectedCountryCode);
-        VerifyOTP_Activity.putExtra("key_phoneNo", key_phoneNo);
+        codeVerifyActivity.putExtra("key_fullname", key_fullname);
+        codeVerifyActivity.putExtra("key_username", key_username);
+        codeVerifyActivity.putExtra("key_emailAddress", key_emailAddress);
+        codeVerifyActivity.putExtra("key_password", key_password);
+        codeVerifyActivity.putExtra("key_gender", key_gender);
+        codeVerifyActivity.putExtra("key_selectedCountryCode", key_selectedCountryCode);
+        codeVerifyActivity.putExtra("key_phoneNo", key_phoneNo);
     }
 
     private boolean validateRadioGroup() {

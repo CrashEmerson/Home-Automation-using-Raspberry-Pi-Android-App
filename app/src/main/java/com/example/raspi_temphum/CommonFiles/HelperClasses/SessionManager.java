@@ -80,6 +80,7 @@ public class SessionManager {
     }
 
     public void createRoomSession(String familyName, String familyCode, String memberType) {
+
         editor.putBoolean("IsUserJoinedRoom", true);
         editor.putString("FamilName", familyName);
         editor.putString("FamilCode", familyCode);
@@ -92,12 +93,19 @@ public class SessionManager {
 
         HashMap<String, String> roomData = new HashMap<>();
 
-        roomData.put("IsUserJoinedRoom", String.valueOf(usersSession.getBoolean("IsUserJoinedRoom", true)));
         roomData.put("FamilName", usersSession.getString("FamilName", null));
         roomData.put("FamilCode", usersSession.getString("FamilCode", null));
         roomData.put("MemberType", usersSession.getString("MemberType", null));
 
         return roomData;
+    }
+
+    public boolean checkUserJoinedRoom() {
+        if (usersSession.getBoolean("IsUserJoinedRoom", false)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void LogoutRoomFromSession() {

@@ -35,9 +35,11 @@ public class RoomActivity extends AppCompatActivity {
         SessionManager sessionManager = new SessionManager(this, SessionManager.SESSION_USERSESSION);
         String userFullname = sessionManager.getUserDataFromSession().get("fullName");
 
-        if(sessionManager.getRoomDataFromSession().get("IsUserJoinedRoom").equals(true)){
-            startActivity(Dashboard);
-        }
+
+//        SessionManager roomSession = new SessionManager(this, SessionManager.SESSION_ROOMSESSION);
+//        if (roomSession.checkUserJoinedRoom()) {
+//            startActivity(Dashboard);
+//        }
 
         hiUserTxtView.setText("Hi, " + userFullname);
 

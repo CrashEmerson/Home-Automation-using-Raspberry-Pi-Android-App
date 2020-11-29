@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chaos.view.PinView;
@@ -36,6 +37,7 @@ public class CodeVertifyOTP extends AppCompatActivity {
     Button verifyBtn;
     String codeGeneratedBySystem;
     Intent LoginSuccessfulActivity, forgetPasswordNewCredentials;
+    TextView userPhnoTxtView;
 
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
@@ -50,6 +52,7 @@ public class CodeVertifyOTP extends AppCompatActivity {
 
         pinView = findViewById(R.id.pinView);
         verifyBtn = findViewById(R.id.verifyBtn);
+        userPhnoTxtView = findViewById(R.id.userPhnoTxtView);
         LoginSuccessfulActivity = new Intent(this, LoginSuccessfull.class);
         forgetPasswordNewCredentials = new Intent(getApplicationContext(), ForgetPassword_NewCredentials.class);
 
@@ -63,6 +66,8 @@ public class CodeVertifyOTP extends AppCompatActivity {
         key_phoneNo = getIntent().getStringExtra("key_phoneNo");
         completePhoneNumber = "+" + key_selectedCountryCode + key_phoneNo;
         purpose = getIntent().getStringExtra("Purpose");
+
+        userPhnoTxtView.setText(completePhoneNumber);
 
         SendCodeToUser(completePhoneNumber);
 
@@ -141,6 +146,7 @@ public class CodeVertifyOTP extends AppCompatActivity {
                         Toast.makeText(CodeVertifyOTP.this, "New data Crash", Toast.LENGTH_SHORT).show();
                         SaveNewUserData();
                         LoginSuccessfulActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        LoginSuccessfulActivity.putExtra("key_fullname", key_fullname);
                         startActivity(LoginSuccessfulActivity);
                     } else if (purpose.equals("UpdatePassword")) {
                         Toast.makeText(CodeVertifyOTP.this, "Update Password", Toast.LENGTH_SHORT).show();

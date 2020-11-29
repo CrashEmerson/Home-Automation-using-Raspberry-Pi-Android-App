@@ -39,7 +39,7 @@
     <string name="code">Code</string>
     <string name="verify">Verification</string>
     <string name="verify_code_btm">Verify Code</string>
-    <string name="code_verify_des">Enter the one time password sent on: \n+91- 8248813545</string>
+    <string name="code_verify_des">Enter the one time password sent on:</string>
 
     //Forget Password
     <string name="forget">Forget</string>

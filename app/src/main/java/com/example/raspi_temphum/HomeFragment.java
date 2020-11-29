@@ -2,11 +2,13 @@ package com.example.raspi_temphum;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
@@ -39,12 +41,8 @@ public class HomeFragment extends Fragment {
     SwitchCompat balconyLEDSwitch, bedRoomLEDSwitch, kidsRoomLEDSwitch, hallLEDSwitch;
     FrameLayout frameLyt;
     Context myContext;
-    Intent SignInActivity;
-
-    boolean balconyLEDON_logstate = true;
-    boolean hallLEDON_logstate = true;
-    boolean bedRoomLEDON_logstate = true;
-    boolean kidsRoomLEDON_logstate = true;
+    Intent SignInActivity, RoomActivity;
+    CardView balconyLEDStateCardView,hallLEDStateCardView,kidsRoomLEDStateCardView,bedRoomLEDStateCardView;
 
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference dbRef = firebaseDatabase.getReference("sensor");
@@ -75,16 +73,18 @@ public class HomeFragment extends Fragment {
         bedRoomLEDSwitch = (SwitchCompat) view.findViewById(R.id.bedRoomLEDSwitch);
         kidsRoomLEDSwitch = (SwitchCompat) view.findViewById(R.id.kidsRoomLEDSwitch);
         hallLEDSwitch = (SwitchCompat) view.findViewById(R.id.hallLEDSwitch);
+
+        bedRoomLEDStateCardView = view.findViewById(R.id.bedRoomLEDStateCardView);
+        kidsRoomLEDStateCardView = view.findViewById(R.id.kidsRoomLEDStateCardView);
+        hallLEDStateCardView = view.findViewById(R.id.hallLEDStateCardView);
+        balconyLEDStateCardView = view.findViewById(R.id.balconyLEDStateCardView);
+
         frameLyt = (FrameLayout) view.findViewById(R.id.frameLyt);
         SignInActivity = new Intent(myContext, SignIn.class);
+        RoomActivity = new Intent(myContext, com.example.raspi_temphum.RoomActivity.class);
 
 
-        SessionManager sessionManager = new SessionManager(myContext, SessionManager.SESSION_USERSESSION);
-        String userFullname = sessionManager.getUserDataFromSession().get("fullName");
 
-        if (!sessionManager.checkUserIsLoggedIn()) {
-            startActivity(SignInActivity);
-        }
 
         //Methods
         setFamilyNameInDashboard();
@@ -93,15 +93,22 @@ public class HomeFragment extends Fragment {
         SwitchRelayState();
         FetchBedTime();
 
+
         SwitchRelayValue();
 
         UpdateDateTime();
 
+        // UpdateLEDState();    TODO: update LED state
 
-        displayUserDetails();   // For testing TODO: delete this after testing
+
+        //displayUserDetails();   For testing TODO: delete this after testing
 
         // Inflate the layout for this fragment
         return view;
+    }
+
+    private void UpdateLEDState() {
+       // bedRoomLEDStateCardView.setCardBackgroundColor(Color.parseColor("#FFFF00"));
     }
 
     private void FetchBedTime() {
@@ -265,8 +272,8 @@ public class HomeFragment extends Fragment {
         dbRef.child("dht").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                long temp = snapshot.child("Temperature").getValue(long.class);
-                long hum = snapshot.child("Humidity").getValue(long.class);
+                String temp = snapshot.child("Temperature").getValue(String.class);
+                String hum = snapshot.child("Humidity").getValue(String.class);
 
                 tempValueTextView.setText("" + temp);
                 humValueTextView.setText("" + hum);

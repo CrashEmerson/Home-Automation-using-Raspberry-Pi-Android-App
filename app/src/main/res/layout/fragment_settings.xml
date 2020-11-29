@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SettingsFragment">
 
     <LinearLayout
@@ -11,70 +12,161 @@
         android:orientation="vertical"
         android:id="@+id/linearLyt">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="8dp">
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/darkModeCardView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="#00000000"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            android:foreground="?android:attr/selectableItemBackground"-->
+<!--            android:longClickable="true"-->
+<!--            app:cardCornerRadius="5dp">-->
 
-            <ImageView
-                android:id="@+id/setting_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:padding="12dp"
-                android:paddingStart="25dp"
-                android:src="@drawable/ic_code" />
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:padding="8dp">-->
 
-            <LinearLayout
-                android:id="@+id/linearlyt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_toEndOf="@id/setting_icon"
-                android:orientation="vertical">
+<!--                <ImageView-->
+<!--                    android:id="@+id/darkmode_icon"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:padding="12dp"-->
+<!--                    android:paddingStart="25dp"-->
+<!--                    android:src="@drawable/ic_darkmode" />-->
 
-                <TextView
-                    android:id="@+id/setting_list_content"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/robotoregular"
-                    android:gravity="start|center_vertical"
-                    android:padding="5dp"
-                    android:paddingStart="20dp"
-                    android:text="Dark mode"
-                    android:textColor="@color/lightBlack"
-                    android:textSize="18sp" />
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/darkModelinearlyt"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_toEndOf="@id/darkmode_icon"-->
+<!--                    android:orientation="vertical">-->
 
-                <TextView
-                    android:id="@+id/setting_list_des"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/robotolight"
-                    android:gravity="start|center_vertical"
-                    android:paddingStart="20dp"
-                    android:text="To prevent your eyes"
-                    android:textColor="@color/lightBlack"
-                    android:textSize="12sp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/darkMode_content"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/robotoregular"-->
+<!--                        android:gravity="start|center_vertical"-->
+<!--                        android:padding="5dp"-->
+<!--                        android:paddingStart="20dp"-->
+<!--                        android:text="Dark mode"-->
+<!--                        android:textColor="@color/lightBlack"-->
+<!--                        android:textSize="18sp" />-->
 
-            </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/darkMode_des"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/robotolight"-->
+<!--                        android:gravity="start|center_vertical"-->
+<!--                        android:paddingStart="20dp"-->
+<!--                        android:text="To prevent your eyes"-->
+<!--                        android:textColor="@color/lightBlack"-->
+<!--                        android:textSize="12sp" />-->
 
-
-            <TextView
-                android:id="@+id/setting_list_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:fontFamily="@font/robotomedium"
-                android:padding="12dp"
-                android:paddingEnd="20dp"
-                android:text="ON"
-                android:textAllCaps="true"
-                android:textColor="@color/lightBlack"
-                android:textSize="16sp" />
+<!--                </LinearLayout>-->
 
 
-        </RelativeLayout>
+<!--                <TextView-->
+<!--                    android:id="@+id/darkmode_value"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:fontFamily="@font/robotomedium"-->
+<!--                    android:padding="12dp"-->
+<!--                    android:text="ON"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="@color/lightBlack"-->
+<!--                    android:textSize="16sp" />-->
+
+
+<!--            </RelativeLayout>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/tempSetpointCardView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="#00000000"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            android:foreground="?android:attr/selectableItemBackground"-->
+<!--            android:longClickable="true"-->
+<!--            app:cardCornerRadius="5dp">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:padding="8dp">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/tempSetpoint_icon"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:padding="12dp"-->
+<!--                    android:paddingStart="25dp"-->
+<!--                    android:src="@drawable/ic_temp" />-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linearlyt"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_toEndOf="@id/tempSetpoint_icon"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/setting_list_content"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/robotoregular"-->
+<!--                        android:gravity="start|center_vertical"-->
+<!--                        android:padding="5dp"-->
+<!--                        android:paddingStart="20dp"-->
+<!--                        android:text="Temperature Setpoint"-->
+<!--                        android:textColor="@color/lightBlack"-->
+<!--                        android:textSize="18sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/setting_list_des"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/robotolight"-->
+<!--                        android:gravity="start|center_vertical"-->
+<!--                        android:paddingStart="20dp"-->
+<!--                        android:text="To set the trigger value for temperature"-->
+<!--                        android:textColor="@color/lightBlack"-->
+<!--                        android:textSize="12sp" />-->
+
+<!--                </LinearLayout>-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tempSetpoint_value"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:fontFamily="@font/robotomedium"-->
+<!--                    android:padding="12dp"-->
+<!--                    android:text="ON"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="@color/lightBlack"-->
+<!--                    android:textSize="16sp" />-->
+
+
+<!--            </RelativeLayout>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/settingRecyclerView"

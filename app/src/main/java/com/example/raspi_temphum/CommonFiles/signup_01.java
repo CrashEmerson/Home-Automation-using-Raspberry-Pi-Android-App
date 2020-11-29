@@ -69,7 +69,19 @@ public class signup_01 extends AppCompatActivity {
                    signIn_02_Activity.putExtra("key_emailAddress", key_emailAddress);
                    signIn_02_Activity.putExtra("key_password", key_password);
 
-                   TransitionAnimation();
+
+                   Pair[] pairs = new Pair[3];
+
+                   pairs[0] = new Pair<View, String>(signup_titleText, "transition_titleText");
+                   pairs[1] = new Pair<View, String>(nextBtn, "transition_nextBtn");
+                   pairs[2] = new Pair<View, String>(signInBtn, "transition_signInBtn");
+
+                   ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(signup_01.this, pairs);
+                   startActivity(signIn_02_Activity, activityOptions.toBundle());
+
+                   //startActivity(signIn_02_Activity);
+
+                   // TransitionAnimation();        TODO: Do Animation later
                }
            }
         );
@@ -131,7 +143,7 @@ public class signup_01 extends AppCompatActivity {
 
 
     private void TransitionAnimation() {
-        Pair[] pairs = new Pair[4];
+        Pair[] pairs = new Pair[3];
 
         pairs[0] = new Pair<View, String>(signup_titleText, "transition_titleText");
         pairs[1] = new Pair<View, String>(nextBtn, "transition_nextBtn");

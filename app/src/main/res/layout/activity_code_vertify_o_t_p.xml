@@ -50,6 +50,16 @@
             android:text="@string/code_verify_des"
             android:textColor="@color/color_bg_orange"
             android:textSize="16sp" />
+        <TextView
+            android:id="@+id/userPhnoTxtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nexabold"
+            android:gravity="center"
+            android:text="xxxxxxxxxx"
+            android:textColor="@color/lightBlack"
+            android:textSize="18sp" />
 
         <RelativeLayout
             android:layout_width="match_parent"

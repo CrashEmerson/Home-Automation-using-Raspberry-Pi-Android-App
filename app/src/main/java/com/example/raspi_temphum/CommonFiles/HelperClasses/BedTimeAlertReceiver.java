@@ -21,17 +21,15 @@ import com.google.firebase.database.ValueEventListener;
 
 public class BedTimeAlertReceiver extends BroadcastReceiver {
 
-
     DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("sensor/Relay");
 
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        dbRef.child("Balcony").setValue("ON");
-        dbRef.child("BedRoom").setValue("ON");
-        dbRef.child("Hall").setValue("ON");
-        dbRef.child("KidsRoom").setValue("ON");
-
+        dbRef.child("Balcony").setValue("OFF");
+        dbRef.child("BedRoom").setValue("OFF");
+        dbRef.child("Hall").setValue("OFF");
+        dbRef.child("KidsRoom").setValue("OFF");
 
 //        createNotificationChannels(context);
 //        sendOnChannel2(context);
