@@ -2,11 +2,9 @@ package com.example.raspi_temphum;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -42,11 +40,12 @@ public class HomeFragment extends Fragment {
     FrameLayout frameLyt;
     Context myContext;
     Intent SignInActivity, RoomActivity;
-    CardView balconyLEDStateCardView,hallLEDStateCardView,kidsRoomLEDStateCardView,bedRoomLEDStateCardView;
+    CardView balconyLEDStateCardView, hallLEDStateCardView, kidsRoomLEDStateCardView, bedRoomLEDStateCardView;
 
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    DatabaseReference dbRef = firebaseDatabase.getReference("sensor");
+    DatabaseReference sensorRef = firebaseDatabase.getReference("sensor");
     DatabaseReference roomRef = firebaseDatabase.getReference("Room");
+    DatabaseReference dbRef = firebaseDatabase.getReference();
 
 
     @Override
@@ -57,33 +56,31 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home2, container, false);
 
-        familyNameTxtView = (TextView) view.findViewById(R.id.familyNameTxtView);
-        tempValueTextView = (TextView) view.findViewById(R.id.tempValueTextView);
-        humValueTextView = (TextView) view.findViewById(R.id.humValueTextView);
-        dateTxtView = (TextView) view.findViewById(R.id.dateTxtView);
-        timeTxtView = (TextView) view.findViewById(R.id.timeTxtView);
+        familyNameTxtView = view.findViewById(R.id.familyNameTxtView);
+        tempValueTextView = view.findViewById(R.id.tempValueTextView);
+        humValueTextView = view.findViewById(R.id.humValueTextView);
+        dateTxtView = view.findViewById(R.id.dateTxtView);
+        timeTxtView = view.findViewById(R.id.timeTxtView);
         bedTimeValueTxtView = view.findViewById(R.id.bedTimeValueTxtView);
 
-        balconyLEDONTxtView = (TextView) view.findViewById(R.id.balconyLEDONTxtView);
-        bedRoomLEDONTxtView = (TextView) view.findViewById(R.id.bedRoomLEDONTxtView);
-        kidsRoomLEDONTxtView = (TextView) view.findViewById(R.id.kidsRoomLEDONTxtView);
-        hallLEDONTxtView = (TextView) view.findViewById(R.id.hallLEDONTxtView);
+        balconyLEDONTxtView = view.findViewById(R.id.balconyLEDONTxtView);
+        bedRoomLEDONTxtView = view.findViewById(R.id.bedRoomLEDONTxtView);
+        kidsRoomLEDONTxtView = view.findViewById(R.id.kidsRoomLEDONTxtView);
+        hallLEDONTxtView = view.findViewById(R.id.hallLEDONTxtView);
 
-        balconyLEDSwitch = (SwitchCompat) view.findViewById(R.id.balconyLEDSwitch);
-        bedRoomLEDSwitch = (SwitchCompat) view.findViewById(R.id.bedRoomLEDSwitch);
-        kidsRoomLEDSwitch = (SwitchCompat) view.findViewById(R.id.kidsRoomLEDSwitch);
-        hallLEDSwitch = (SwitchCompat) view.findViewById(R.id.hallLEDSwitch);
+        balconyLEDSwitch = view.findViewById(R.id.balconyLEDSwitch);
+        bedRoomLEDSwitch = view.findViewById(R.id.bedRoomLEDSwitch);
+        kidsRoomLEDSwitch = view.findViewById(R.id.kidsRoomLEDSwitch);
+        hallLEDSwitch = view.findViewById(R.id.hallLEDSwitch);
 
         bedRoomLEDStateCardView = view.findViewById(R.id.bedRoomLEDStateCardView);
         kidsRoomLEDStateCardView = view.findViewById(R.id.kidsRoomLEDStateCardView);
         hallLEDStateCardView = view.findViewById(R.id.hallLEDStateCardView);
         balconyLEDStateCardView = view.findViewById(R.id.balconyLEDStateCardView);
 
-        frameLyt = (FrameLayout) view.findViewById(R.id.frameLyt);
+        frameLyt = view.findViewById(R.id.frameLyt);
         SignInActivity = new Intent(myContext, SignIn.class);
         RoomActivity = new Intent(myContext, com.example.raspi_temphum.RoomActivity.class);
-
-
 
 
         //Methods
@@ -101,29 +98,29 @@ public class HomeFragment extends Fragment {
         // UpdateLEDState();    TODO: update LED state
 
 
-        //displayUserDetails();   For testing TODO: delete this after testing
+        displayUserDetails();   //For testing TODO: delete this after testing
 
         // Inflate the layout for this fragment
         return view;
     }
 
     private void UpdateLEDState() {
-       // bedRoomLEDStateCardView.setCardBackgroundColor(Color.parseColor("#FFFF00"));
+        // bedRoomLEDStateCardView.setCardBackgroundColor(Color.parseColor("#FFFF00"));
     }
 
     private void FetchBedTime() {
 
         SessionManager roomData = new SessionManager(myContext, SessionManager.SESSION_ROOMSESSION);
         HashMap<String, String> roomhashData = roomData.getRoomDataFromSession();
-        String currentfamilyCode = roomhashData.get("FamilCode").toString();
+        String currentfamilyCode = roomhashData.get("FamilCode");
 
         roomRef.child(currentfamilyCode).child("BedTime").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                long hours = snapshot.child("hours").getValue(long.class);
-                long minute = snapshot.child("minute").getValue(long.class);
+                String hours = snapshot.child("hours").getValue(String.class);
+                String minute = snapshot.child("minute").getValue(String.class);
 
-                bedTimeValueTxtView.setText(hours + " : " + minute);
+                bedTimeValueTxtView.setText(hours + " : " + minute);   // TODO: change later
             }
 
             @Override
@@ -149,8 +146,8 @@ public class HomeFragment extends Fragment {
                 int month = calendar.get(Calendar.MONTH) + 1;
                 int hours = calendar.get(Calendar.HOUR_OF_DAY);
                 int minute = calendar.get(Calendar.MINUTE);
-                final String days[] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
-                String months[] = {"January", "February", "March", "April", "May ", "June", "July", "August", "September", "October", " November", "December"};
+                final String[] days = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
+                String[] months = {"January", "February", "March", "April", "May ", "June", "July", "August", "September", "October", " November", "December"};
 
                 final String currentDay = days[day - 1];
                 final int currentDate = date;
@@ -168,33 +165,23 @@ public class HomeFragment extends Fragment {
 
     private void SwitchRelayState() {
 
-        dbRef.child("Relay").addValueEventListener(new ValueEventListener() {
+        sensorRef.child("Relay").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if ((snapshot.child("Balcony").getValue(String.class)).equals("ON"))
-                    balconyLEDSwitch.setChecked(true);
-                else balconyLEDSwitch.setChecked(false);
+                balconyLEDSwitch.setChecked((snapshot.child("Balcony").getValue(String.class)).equals("ON"));
 
-                if ((snapshot.child("BedRoom").getValue(String.class)).equals("ON"))
-                    bedRoomLEDSwitch.setChecked(true);
-                else bedRoomLEDSwitch.setChecked(false);
+                bedRoomLEDSwitch.setChecked((snapshot.child("BedRoom").getValue(String.class)).equals("ON"));
 
-                if ((snapshot.child("KidsRoom").getValue(String.class)).equals("ON"))
-                    kidsRoomLEDSwitch.setChecked(true);
-                else kidsRoomLEDSwitch.setChecked(false);
+                kidsRoomLEDSwitch.setChecked((snapshot.child("KidsRoom").getValue(String.class)).equals("ON"));
 
-                if ((snapshot.child("Hall").getValue(String.class)).equals("ON"))
-                    hallLEDSwitch.setChecked(true);
-                else hallLEDSwitch.setChecked(false);
+                hallLEDSwitch.setChecked((snapshot.child("Hall").getValue(String.class)).equals("ON"));
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
-
     }
 
     private void SwitchRelayValue() {
@@ -208,9 +195,9 @@ public class HomeFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
-                    dbRef.child("Relay").child("Balcony").setValue("ON");
+                    sensorRef.child("Relay").child("Balcony").setValue("ON");
                 } else {
-                    dbRef.child("Relay").child("Balcony").setValue("OFF");
+                    sensorRef.child("Relay").child("Balcony").setValue("OFF");
                 }
             }
         });
@@ -219,9 +206,9 @@ public class HomeFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
-                    dbRef.child("Relay").child("BedRoom").setValue("ON");
+                    sensorRef.child("Relay").child("BedRoom").setValue("ON");
                 } else {
-                    dbRef.child("Relay").child("BedRoom").setValue("OFF");
+                    sensorRef.child("Relay").child("BedRoom").setValue("OFF");
                 }
             }
         });
@@ -230,9 +217,9 @@ public class HomeFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
-                    dbRef.child("Relay").child("KidsRoom").setValue("ON");
+                    sensorRef.child("Relay").child("KidsRoom").setValue("ON");
                 } else {
-                    dbRef.child("Relay").child("KidsRoom").setValue("OFF");
+                    sensorRef.child("Relay").child("KidsRoom").setValue("OFF");
                 }
             }
         });
@@ -241,9 +228,9 @@ public class HomeFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
-                    dbRef.child("Relay").child("Hall").setValue("ON");
+                    sensorRef.child("Relay").child("Hall").setValue("ON");
                 } else {
-                    dbRef.child("Relay").child("Hall").setValue("OFF");
+                    sensorRef.child("Relay").child("Hall").setValue("OFF");
                 }
             }
         });
@@ -251,7 +238,7 @@ public class HomeFragment extends Fragment {
 
     private void fetchRelayData() {
 
-        dbRef.child("Relay").addValueEventListener(new ValueEventListener() {
+        sensorRef.child("Relay").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 balconyLEDONTxtView.setText(snapshot.child("Balcony").getValue(String.class));
@@ -269,11 +256,27 @@ public class HomeFragment extends Fragment {
 
     private void fetchTempHumData() {
 
-        dbRef.child("dht").addValueEventListener(new ValueEventListener() {
+        dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String temp = snapshot.child("Temperature").getValue(String.class);
-                String hum = snapshot.child("Humidity").getValue(String.class);
+                String temp = snapshot.child("sensor/dht/Temperature").getValue(String.class);
+                String hum = snapshot.child("sensor/dht/Humidity").getValue(String.class);
+
+                SessionManager roomData = new SessionManager(myContext, SessionManager.SESSION_ROOMSESSION);
+                String familCode = roomData.getRoomDataFromSession().get("FamilCode");
+
+                String temp_setpoint = snapshot.child("Room").child(familCode).child("Setpoint/temperature").getValue(String.class);
+                String hum_setpoint = snapshot.child("Room").child(familCode).child("Setpoint/humidity").getValue(String.class);
+
+                int temp_value = Integer.parseInt(temp);
+                int hum_value = Integer.parseInt(hum);
+                int temp_setpoint_value = Integer.parseInt(temp_setpoint);
+                int hum_setpoint_value = Integer.parseInt(hum_setpoint);
+
+
+                if ((temp_value >= temp_setpoint_value || hum_value >= hum_setpoint_value))
+                    dbRef.child("sensor").child("Buzzer/Alarm").setValue("ON");
+                else dbRef.child("sensor").child("Buzzer/Alarm").setValue("OFF");
 
                 tempValueTextView.setText("" + temp);
                 humValueTextView.setText("" + hum);
@@ -308,9 +311,7 @@ public class HomeFragment extends Fragment {
         SessionManager roomData = new SessionManager(myContext, SessionManager.SESSION_ROOMSESSION);
 
         HashMap<String, String> roomhashData = roomData.getRoomDataFromSession();
-        String currentfamilyName = roomhashData.get("FamilName").toString();
+        String currentfamilyName = roomhashData.get("FamilName");
         familyNameTxtView.setText(currentfamilyName);
-
-
     }
 }

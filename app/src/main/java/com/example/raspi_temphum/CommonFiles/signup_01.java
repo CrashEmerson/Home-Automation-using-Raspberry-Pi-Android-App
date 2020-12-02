@@ -47,58 +47,55 @@ public class signup_01 extends AppCompatActivity {
 
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View view) {
+                                       @Override
+                                       public void onClick(View view) {
 
-                   CheckInternet checkInternet = new CheckInternet();
-                   if (!checkInternet.checkIsConnected(signup_01.this)) {
-                       checkInternet.NoInternetPopUpDialog(signup_01.this);
-                       return;
-                   }
-                   if (!validateFullname() | !validateUsername() | !validateEmail() | !validatePassword()) {
-                       return;
-                   }
+                                           CheckInternet checkInternet = new CheckInternet();
+                                           if (!checkInternet.checkIsConnected(signup_01.this)) {
+                                               checkInternet.NoInternetPopUpDialog(signup_01.this);
+                                               return;
+                                           }
+                                           if (!validateFullname() | !validateUsername() | !validateEmail() | !validatePassword()) {
+                                               return;
+                                           }
 
-                   String key_fullname = fullnameEdTxt.getEditText().getText().toString().trim();
-                   String key_username = usernameEdTxt.getEditText().getText().toString().trim();
-                   String key_emailAddress = emailAddressEdTxt.getEditText().getText().toString().trim();
-                   String key_password = passwordEdTxt.getEditText().getText().toString().trim();
+                                           String key_fullname = fullnameEdTxt.getEditText().getText().toString().trim();
+                                           String key_username = usernameEdTxt.getEditText().getText().toString().trim();
+                                           String key_emailAddress = emailAddressEdTxt.getEditText().getText().toString().trim();
+                                           String key_password = passwordEdTxt.getEditText().getText().toString().trim();
 
-                   signIn_02_Activity.putExtra("key_fullname", key_fullname);
-                   signIn_02_Activity.putExtra("key_username", key_username);
-                   signIn_02_Activity.putExtra("key_emailAddress", key_emailAddress);
-                   signIn_02_Activity.putExtra("key_password", key_password);
+                                           signIn_02_Activity.putExtra("key_fullname", key_fullname);
+                                           signIn_02_Activity.putExtra("key_username", key_username);
+                                           signIn_02_Activity.putExtra("key_emailAddress", key_emailAddress);
+                                           signIn_02_Activity.putExtra("key_password", key_password);
 
+                                           // Screen Transition Animation
 
-                   Pair[] pairs = new Pair[3];
+                                           Pair[] pairs = new Pair[3];
 
-                   pairs[0] = new Pair<View, String>(signup_titleText, "transition_titleText");
-                   pairs[1] = new Pair<View, String>(nextBtn, "transition_nextBtn");
-                   pairs[2] = new Pair<View, String>(signInBtn, "transition_signInBtn");
+                                           pairs[0] = new Pair<View, String>(signup_titleText, "transition_titleText");
+                                           pairs[1] = new Pair<View, String>(nextBtn, "transition_nextBtn");
+                                           pairs[2] = new Pair<View, String>(signInBtn, "transition_signInBtn");
 
-                   ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(signup_01.this, pairs);
-                   startActivity(signIn_02_Activity, activityOptions.toBundle());
+                                           ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(signup_01.this, pairs);
+                                           startActivity(signIn_02_Activity, activityOptions.toBundle());
 
-                   //startActivity(signIn_02_Activity);
-
-                   // TransitionAnimation();        TODO: Do Animation later
-               }
-           }
+                                       }
+                                   }
         );
     }
 
     private boolean validateUsername() {
         String val_username = usernameEdTxt.getEditText().getText().toString().trim();
-        String whitespaces = "\\A\\w{1,20}\\z";
 
         if (val_username.isEmpty()) {
             usernameEdTxt.setError("Field can not be empty !");
             return false;
-        } else if (!val_username.matches(whitespaces)) {
-            usernameEdTxt.setError("Whitespaces are not allowed !");
+        } else if (val_username.length() > 15) {
+            usernameEdTxt.setError("Username should not exceed 15 characters");
             return false;
-        } else if (val_username.length() > 20) {
-            usernameEdTxt.setError("Username should exceed 20 characters");
+        } else if (val_username.contains(" ")) {
+            usernameEdTxt.setError("Whitespaces are not allowed !");
             return false;
         } else {
             usernameEdTxt.setError(null);
@@ -139,18 +136,6 @@ public class signup_01 extends AppCompatActivity {
             passwordEdTxt.setErrorEnabled(false);
             return true;
         }
-    }
-
-
-    private void TransitionAnimation() {
-        Pair[] pairs = new Pair[3];
-
-        pairs[0] = new Pair<View, String>(signup_titleText, "transition_titleText");
-        pairs[1] = new Pair<View, String>(nextBtn, "transition_nextBtn");
-        pairs[2] = new Pair<View, String>(signInBtn, "transition_signInBtn");
-
-        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(signup_01.this, pairs);
-        startActivity(signIn_02_Activity, activityOptions.toBundle());
     }
 
 

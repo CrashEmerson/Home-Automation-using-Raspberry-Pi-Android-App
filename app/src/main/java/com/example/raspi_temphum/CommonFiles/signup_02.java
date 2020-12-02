@@ -80,10 +80,8 @@ public class signup_02 extends AppCompatActivity {
                         } else {
                             phoneNoEdTxt.setError(null);
                             phoneNoEdTxt.setErrorEnabled(false);
-
                             GetAllData();
                         }
-
                     }
 
                     @Override

@@ -14,8 +14,8 @@
 <!--    <color name="color_bg_orange">#f7785e</color>-->
 <!--    <color name="color_text_white">#E9E9E9</color>-->
     <color name="color_text_white">#FFFFFF</color>
-<!--    <color name="dashboard_value_color">#f89938</color>-->
-    <color name="dashboard_value_color">#EF8FA0</color>
+    <color name="dashboard_value_color">#f89938</color>
+<!--    <color name="dashboard_value_color">#EF8FA0</color>-->
 
 
 </resources>

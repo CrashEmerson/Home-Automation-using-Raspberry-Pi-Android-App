@@ -4,13 +4,16 @@ import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.app.UiModeManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -43,7 +46,7 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingV
 
     @NonNull
     @Override
-    public SettingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SettingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, final int viewType) {
 
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.settings_list_design, parent, false);
@@ -61,7 +64,13 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingV
 
                 switch (settingViewHolder.getAdapterPosition()) {
                     case 0:
+
+
+                        FrameLayout frameLayout = view.findViewById(R.id.setting_frameLyt);
+
                         if (settingViewHolder.value.getText().equals("ON")) {
+//                            frameLayout.setBackgroundColor(view.getResources().getColor(R.color.lightBlack));
+                            settingViewHolder.frameLayout.setBackgroundColor(Color.BLACK);
                             settingViewHolder.value.setText("OFF");
                             Toast.makeText(context, "light mode", Toast.LENGTH_SHORT).show();
                         } else {
@@ -151,8 +160,8 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingV
                                         0
                                 );
 
-                                RoomRef.child(familyCode).child("BedTime").child("hours").setValue(hourOfDay);
-                                RoomRef.child(familyCode).child("BedTime").child("minute").setValue(minute);
+                                RoomRef.child(familyCode).child("BedTime").child("hours").setValue(Integer.toString(hourOfDay));
+                                RoomRef.child(familyCode).child("BedTime").child("minute").setValue(Integer.toString(minute));
 
                                 Snackbar bedtimeSnackbar = Snackbar.make(settingViewHolder.setting_optionCardView, "BedTime is added Sucessfully", Snackbar.LENGTH_SHORT);
                                 bedtimeSnackbar.show();
@@ -194,11 +203,11 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingV
         Intent intent = new Intent(context, BedTimeAlertReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
 
-        if(c.before(Calendar.getInstance())){
-            c.add(Calendar.DATE,1);
+        if (c.before(Calendar.getInstance())) {
+            c.add(Calendar.DATE, 1);
         }
 
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), AlarmManager.INTERVAL_DAY , pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
     }
 
     @Override
@@ -222,6 +231,7 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingV
         ImageView image;
         TextView content, desc, value;
         CardView setting_optionCardView;
+        FrameLayout frameLayout;
 
         public SettingViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -231,6 +241,7 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingV
             desc = itemView.findViewById(R.id.setting_list_des);
             value = itemView.findViewById(R.id.setting_list_value);
             setting_optionCardView = itemView.findViewById(R.id.setting_optionCardView);
+            frameLayout = itemView.findViewById(R.id.setting_frameLyt);
 
         }
     }

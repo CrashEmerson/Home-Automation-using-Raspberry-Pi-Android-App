@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,13 +38,13 @@ public class SettingsFragment extends Fragment {
 
     //CardView darkModeCardView;
     TextView darkmode_value;
+    FrameLayout setting_frameLyt;
 
     DatabaseReference roomRef = FirebaseDatabase.getInstance().getReference("Room");
 
     public String bedtime_hour, bedtime_minute;
     public String temp_setpoint, hum_setpoint;
     ArrayList<SettingHelperClass> settingHelperClassArrayList;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,6 +53,7 @@ public class SettingsFragment extends Fragment {
         myContext = container.getContext();
 
         settingRecyclerView = view.findViewById(R.id.settingRecyclerView);
+        setting_frameLyt = view.findViewById(R.id.setting_frameLyt);
         //darkModeCardView = view.findViewById(R.id.darkModeCardView);
         //darkmode_value = view.findViewById(R.id.darkmode_value);
 

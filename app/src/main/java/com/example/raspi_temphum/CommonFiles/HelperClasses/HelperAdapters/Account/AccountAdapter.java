@@ -73,8 +73,10 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.AccountV
 
                     case 1: // Logout
 
-                        SessionManager sessionManager = new SessionManager(context, SessionManager.SESSION_USERSESSION);
-                        sessionManager.LogoutUserFromSession();
+                        SessionManager logoutUserSession = new SessionManager(context, SessionManager.SESSION_USERSESSION);
+                        logoutUserSession.LogoutUserFromSession();
+                        SessionManager loyoutRoomSession = new SessionManager(context, SessionManager.SESSION_ROOMSESSION);
+                        loyoutRoomSession.LogoutUserFromSession();
 
                         Intent SignInActivity = new Intent(context, SignIn.class);
                         SignInActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

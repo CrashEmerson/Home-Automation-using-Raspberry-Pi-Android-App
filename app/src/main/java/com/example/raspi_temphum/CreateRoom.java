@@ -93,6 +93,10 @@ public class CreateRoom extends AppCompatActivity {
 
                             dbRef.child("Room").child(familyCode).child("FamilyName").setValue(familyName);
                             dbRef.child("Room").child(familyCode).child("AdminNumber").setValue(completePhno);
+                            dbRef.child("Room").child(familyCode).child("BedTime").child("hours").setValue("10");
+                            dbRef.child("Room").child(familyCode).child("BedTime").child("minute").setValue("30");
+                            dbRef.child("Room").child(familyCode).child("Setpoint").child("temperature").setValue("35");
+                            dbRef.child("Room").child(familyCode).child("Setpoint").child("humidity").setValue("90");
 
                             dbRef.child("Users").child(completePhno).child("FamilyCode").setValue(familyCode);
 

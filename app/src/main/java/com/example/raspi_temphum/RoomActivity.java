@@ -36,10 +36,11 @@ public class RoomActivity extends AppCompatActivity {
         String userFullname = sessionManager.getUserDataFromSession().get("fullName");
 
 
-//        SessionManager roomSession = new SessionManager(this, SessionManager.SESSION_ROOMSESSION);
-//        if (roomSession.checkUserJoinedRoom()) {
-//            startActivity(Dashboard);
-//        }
+        SessionManager roomSession = new SessionManager(this, SessionManager.SESSION_ROOMSESSION);
+        if (roomSession.checkUserJoinedRoom()) {
+            Dashboard.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(Dashboard);
+        }
 
         hiUserTxtView.setText("Hi, " + userFullname);
 
