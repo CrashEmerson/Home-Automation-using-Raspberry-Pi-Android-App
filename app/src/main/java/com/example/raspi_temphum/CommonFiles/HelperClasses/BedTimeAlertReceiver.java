@@ -22,24 +22,25 @@ import com.google.firebase.database.ValueEventListener;
 public class BedTimeAlertReceiver extends BroadcastReceiver {
 
     DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("sensor/Relay");
+    DatabaseReference modificationdb = FirebaseDatabase.getInstance().getReference();
 
     @Override
-    public void onReceive(Context context, Intent intent) {
+    public void onReceive(final Context context, Intent intent) {
 
         dbRef.child("Balcony").setValue("OFF");
         dbRef.child("BedRoom").setValue("OFF");
         dbRef.child("Hall").setValue("OFF");
         dbRef.child("KidsRoom").setValue("OFF");
 
-//        createNotificationChannels(context);
-//        sendOnChannel2(context);
-
+        createNotificationChannels(context);
+        displayNotification(context);
     }
+
     private void createNotificationChannels(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel1 = new NotificationChannel(
                     "channel 2 ",
-                    "Channel 2",
+                    "Bed Time Channel",
                     NotificationManager.IMPORTANCE_HIGH
             );
             channel1.setDescription("This is Channel 2");
@@ -49,17 +50,19 @@ public class BedTimeAlertReceiver extends BroadcastReceiver {
         }
     }
 
-    public void sendOnChannel2(Context context) {
+
+    public void displayNotification(Context context) {
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
         String title = "Bed Time";
-        String message = "All Lights will be automatically OFF in 5 minutes";
+        String message = "Time to bed !";
         Notification notification = new NotificationCompat.Builder(context, "channel 2 ")
                 .setSmallIcon(R.drawable.ic_logs)
                 .setContentTitle(title)
-                .setContentText(message)
+                .setContentText("Time to bed !")
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();
         notificationManager.notify(2, notification);
     }
+
 }

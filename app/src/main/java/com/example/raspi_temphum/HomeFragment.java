@@ -2,6 +2,7 @@ package com.example.raspi_temphum;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -95,18 +96,12 @@ public class HomeFragment extends Fragment {
 
         UpdateDateTime();
 
-        // UpdateLEDState();    TODO: update LED state
-
-
-        displayUserDetails();   //For testing TODO: delete this after testing
+        //displayUserDetails();
 
         // Inflate the layout for this fragment
         return view;
     }
 
-    private void UpdateLEDState() {
-        // bedRoomLEDStateCardView.setCardBackgroundColor(Color.parseColor("#FFFF00"));
-    }
 
     private void FetchBedTime() {
 
@@ -196,8 +191,10 @@ public class HomeFragment extends Fragment {
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
                     sensorRef.child("Relay").child("Balcony").setValue("ON");
+                    balconyLEDStateCardView.setCardBackgroundColor(Color.parseColor("#FFFF00"));
                 } else {
                     sensorRef.child("Relay").child("Balcony").setValue("OFF");
+                    balconyLEDStateCardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
                 }
             }
         });
@@ -207,8 +204,10 @@ public class HomeFragment extends Fragment {
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
                     sensorRef.child("Relay").child("BedRoom").setValue("ON");
+                    bedRoomLEDStateCardView.setCardBackgroundColor(Color.parseColor("#FFFF00"));
                 } else {
                     sensorRef.child("Relay").child("BedRoom").setValue("OFF");
+                    bedRoomLEDStateCardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
                 }
             }
         });
@@ -218,8 +217,10 @@ public class HomeFragment extends Fragment {
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
                     sensorRef.child("Relay").child("KidsRoom").setValue("ON");
+                    kidsRoomLEDStateCardView.setCardBackgroundColor(Color.parseColor("#FFFF00"));
                 } else {
                     sensorRef.child("Relay").child("KidsRoom").setValue("OFF");
+                    kidsRoomLEDStateCardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
                 }
             }
         });
@@ -229,8 +230,10 @@ public class HomeFragment extends Fragment {
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
                     sensorRef.child("Relay").child("Hall").setValue("ON");
+                    hallLEDStateCardView.setCardBackgroundColor(Color.parseColor("#FFFF00"));
                 } else {
                     sensorRef.child("Relay").child("Hall").setValue("OFF");
+                    hallLEDStateCardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
                 }
             }
         });

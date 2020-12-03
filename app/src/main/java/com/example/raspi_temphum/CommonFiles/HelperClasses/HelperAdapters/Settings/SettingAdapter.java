@@ -63,22 +63,21 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingV
             public void onClick(View view) {
 
                 switch (settingViewHolder.getAdapterPosition()) {
+
+//                    case 0:
+//                        FrameLayout frameLayout = view.findViewById(R.id.setting_frameLyt);
+//                        if (settingViewHolder.value.getText().equals("ON")) {
+////                            frameLayout.setBackgroundColor(view.getResources().getColor(R.color.lightBlack));
+//                            settingViewHolder.frameLayout.setBackgroundColor(Color.BLACK);
+//                            settingViewHolder.value.setText("OFF");
+//                            Toast.makeText(context, "light mode", Toast.LENGTH_SHORT).show();
+//                        } else {
+//                            settingViewHolder.value.setText("ON");
+//                            Toast.makeText(context, "dark mode", Toast.LENGTH_SHORT).show();
+//                        }
+//                        break;
+
                     case 0:
-
-
-                        FrameLayout frameLayout = view.findViewById(R.id.setting_frameLyt);
-
-                        if (settingViewHolder.value.getText().equals("ON")) {
-//                            frameLayout.setBackgroundColor(view.getResources().getColor(R.color.lightBlack));
-                            settingViewHolder.frameLayout.setBackgroundColor(Color.BLACK);
-                            settingViewHolder.value.setText("OFF");
-                            Toast.makeText(context, "light mode", Toast.LENGTH_SHORT).show();
-                        } else {
-                            settingViewHolder.value.setText("ON");
-                            Toast.makeText(context, "dark mode", Toast.LENGTH_SHORT).show();
-                        }
-                        break;
-                    case 1:
 
                         AlertDialog.Builder tempe_setpointDialog = new AlertDialog.Builder(context);
                         tempe_setpointDialog.setTitle("Temperature Set-point");
@@ -112,7 +111,7 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingV
 
                         tempe_setpointDialog.show();
                         break;
-                    case 2:
+                    case 1:
 
                         AlertDialog.Builder hum_setpointDialog = new AlertDialog.Builder(context);
                         hum_setpointDialog.setTitle("Humidity Set-point");
@@ -144,7 +143,7 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingV
 
                         hum_setpointDialog.show();
                         break;
-                    case 3:
+                    case 2:
                         final Calendar c = Calendar.getInstance();
 
                         TimePickerDialog timePickerDialog = new TimePickerDialog(context, new TimePickerDialog.OnTimeSetListener() {
@@ -169,17 +168,14 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingV
                                 settingViewHolder.value.setText(hourOfDay + ":" + minute);
 
                                 startBedTimeNotification(c);
-
                             }
-
-
                         }, c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), true);
 
 
                         timePickerDialog.show();
                         break;
 
-                    case 4:
+                    case 3:
                         if (settingViewHolder.value.getText().equals("ON")) {
                             settingViewHolder.value.setText("OFF");
                             Toast.makeText(context, "Notification is ON", Toast.LENGTH_SHORT).show();

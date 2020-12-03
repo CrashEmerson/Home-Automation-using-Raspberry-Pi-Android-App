@@ -10,7 +10,7 @@ import android.widget.Button;
 public class RoomCreatedSuccessActivity extends AppCompatActivity {
 
     Button enterRoomBtn,notNowBtn;
-    Intent HomeActivity, RoomActivityIntent;
+    Intent Dashboard, RoomActivityIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +20,13 @@ public class RoomCreatedSuccessActivity extends AppCompatActivity {
         enterRoomBtn = findViewById(R.id.enterRoomBtn);
         notNowBtn = findViewById(R.id.notNowBtn);
 
-        HomeActivity = new Intent(this, Dashboard.class);
+        Dashboard = new Intent(this, Dashboard.class);
         RoomActivityIntent = new Intent(this, RoomActivity.class);
 
         enterRoomBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(HomeActivity);
+                startActivity(Dashboard);
                 finish();
             }
         });

@@ -84,7 +84,7 @@ public class SettingsFragment extends Fragment {
 
                     // TODO: add notification info to SESSION
 
-                    settingHelperClassArrayList.add(new SettingHelperClass(R.drawable.ic_darkmode, "Dark Mode", "To prevent eyes", "ON"));
+//                    settingHelperClassArrayList.add(new SettingHelperClass(R.drawable.ic_darkmode, "Dark Mode", "To prevent eyes", "ON"));
                     settingHelperClassArrayList.add(new SettingHelperClass(R.drawable.ic_temp, "Temperature Setpoint", "To set the trigger value for temperature", temp_setpoint));
                     settingHelperClassArrayList.add(new SettingHelperClass(R.drawable.ic_hum, "Humidity Setpoint", "To set the trigger value for humidity", hum_setpoint));
                     settingHelperClassArrayList.add(new SettingHelperClass(R.drawable.ic_bedtime, "Bed Time", "To set bed time value", bedtime_hour + ":" + bedtime_minute));

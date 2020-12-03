@@ -114,6 +114,8 @@ public class CodeVertifyOTP extends AppCompatActivity {
         // automatically invokes the code from the SMS
         @Override
         public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+            //Instant verification / Auto-retrieval
+
             Toast.makeText(CodeVertifyOTP.this, "Verification completed", Toast.LENGTH_LONG).show();
             String codeByUser = phoneAuthCredential.getSmsCode();         //Gets the Code entered by the user in pinview
 

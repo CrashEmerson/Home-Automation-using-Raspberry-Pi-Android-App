@@ -37,7 +37,6 @@ public class Dashboard extends AppCompatActivity implements BottomNavigationView
             startActivity(RoomActivity);
         }
 
-        // TODO: check user session to access Dashboard
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
 
